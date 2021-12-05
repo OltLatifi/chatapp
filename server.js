@@ -10,6 +10,7 @@ const server = http.createServer(app);
 const io = socketio(server);
 
 // constants
+const host = '0.0.0.0';
 const PORT = 3000 || process.env.PORT;
 const BOT_NAME = "Olt's bot";
 
@@ -67,4 +68,4 @@ io.on("connection", (socket) => {
 
 });
 
-server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+server.listen(PORT, host, () => console.log(`Server running on port ${PORT}`));
